@@ -3,7 +3,7 @@ CLI application that generates HTML page.
 # Team HTML page generator [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ## Description
 This is Command Line Interface application that creates html page containing information about the team memebrs after entered into terminal. This project was created in node using the npm. Styling was done through bootstrap as well as custom stylesheet.
-[HERE](https://github.com/FrantiskaAli) is link to my HTML.
+[HERE](https://github.com/FrantiskaAli/TeamProfileGenerator/blob/main/output/team.html) is link to my sample HTML.
 
 ## Table of content
 - [Installation](#Installation)
