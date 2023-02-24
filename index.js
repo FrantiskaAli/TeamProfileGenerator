@@ -11,7 +11,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./src/page-template.js");
 const { clear } = require("console");
 
-
+//array of team to create the website (objects created after prompts will be pushed in here)
+const team = []
 
 inquirer
     .prompt([
@@ -38,7 +39,7 @@ inquirer
     ])
     .then((response) => {
         const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
-        module.export = manager
+        team.push(manager)
     promptForNext()
     });
 
@@ -74,7 +75,7 @@ const promptForNext = () => {
             } else if (answer.next == 2) {
                 promptIntern()
             } else {
-               console.log('finished')
+               fs.writeFile(outputPath, render(team), err => err ? console.error(err) : console.log('alldone'))
                 
             }
         })
@@ -107,6 +108,7 @@ const promptEngineer = () => {
         ])
         .then((response) => {
             const engineer = new Engineer(response.name, response.id, response.email, response.github)
+            team.push(engineer);
             promptForNext();
 
         });
@@ -140,6 +142,7 @@ const promptIntern = () => {
         ])
         .then((response) => {
             const intern = new Intern(response.name, response.id, response.email, response.school)
+            team.push(intern);
             promptForNext();
 
         });
