@@ -34,7 +34,7 @@ inquirer
         {
             type: 'input',
             message: 'What is your manager\'s office number?',
-            name: 'email',
+            name: 'officeNumber',
         },
     ])
     .then((response) => {
