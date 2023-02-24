@@ -6,14 +6,14 @@ const path = require("path");
 const fs = require("fs");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "team.html");
+const outputPath = path.join(OUTPUT_DIR, "team.html"); //path where our html will be generated
 
 const render = require("./src/page-template.js");
 const { clear } = require("console");
-
+let manager = {};
 //array of team to create the website (objects created after prompts will be pushed in here)
-const team = []
-
+const team = [];
+//first inquirer in which other will be nested
 inquirer
     .prompt([
         {
@@ -38,9 +38,10 @@ inquirer
         },
     ])
     .then((response) => {
-        const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
-        team.push(manager)
-    promptForNext()
+       manager = new Manager(response.name, response.id, response.email, response.officeNumber);
+    
+
+    promptForNext() 
     });
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
@@ -55,6 +56,7 @@ const promptForNext = () => {
                 message: 'Choose what kind of employee would you like to pick',
                 choices: [
                     {
+                        //needed to assigne name and value so I can access the fineal choice
                         name: 'Engineer',
                         value: 1,
                     },
@@ -75,7 +77,16 @@ const promptForNext = () => {
             } else if (answer.next == 2) {
                 promptIntern()
             } else {
-               fs.writeFile(outputPath, render(team), err => err ? console.error(err) : console.log('alldone'))
+                //writting in html file
+                inquirer.prompt([{
+                    type: 'input',
+                    message: 'Please select name for yout team!',
+                    name: 'name',  
+                }]).then((answer) =>{
+                    const name = answer.name;
+                    fs.writeFile(outputPath, render(team, name, manager), err => err ? console.error(err) : console.log('You have succesfully created your team page !'))
+                }
+                )
                 
             }
         })

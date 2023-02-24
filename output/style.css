@@ -1,0 +1,51 @@
+body{
+    background-image:url('../backgroundimg.webp') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header{
+    position: sticky !important;
+    top:0px !important;
+    z-index:100;
+}
+.team-heading{
+    background-color: rgb(216, 142, 72);
+    font-family: 'Abril Fatface', cursive;
+    font-size: xx-large; 
+    text-transform: uppercase;
+    border-bottom: 5px solid black;
+    height: 18% !important;
+}
+.team-area{
+    flex-wrap: wrap !important;
+}
+#manager{
+    margin-top:20% !important;
+}
+.card{
+    padding: 0px;
+    border: 3px solid black;
+}
+.card-header{
+    width: 100%;
+    background-color: rgb(216, 142, 72);
+    font-family: 'Abril Fatface', cursive;
+}
+.card-body{
+    background-color: rgb(0, 0, 39);
+}
+.list-group-item{
+    background-color: rgb(0, 0, 39) !important;
+    color: rgb(216, 142, 72);
+    font-family: 'Catamaran', sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+.list-group-item a{
+    color: rgb(218, 91, 41);
+}
+.list-group-item a:hover{
+    color: rgb(104, 104, 217);
+    text-decoration:none;
+}
