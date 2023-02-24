@@ -20,6 +20,7 @@ const generateTeam = team => {
         `;
     };
 
+
     // creates the html for engineers
     const generateEngineer = engineer => {
         return `
@@ -57,6 +58,7 @@ const generateTeam = team => {
 </div>
         `;
     };
+
 
     const html = [];
 

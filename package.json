@@ -1,0 +1,31 @@
+{
+  "name": "html-team-generator",
+  "version": "1.0.0",
+  "description": "This CLI useses inquirer and prompts user to input details so it can generate html site with emplyees details.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrantiskaAli/TeamProfileGenerator.git"
+  },
+  "keywords": [
+    "generator",
+    "practisingnpm",
+    "jsclasses"
+  ],
+  "author": "franAli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrantiskaAli/TeamProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/FrantiskaAli/TeamProfileGenerator#readme",
+  "dependencies": {
+    "inquirer": "^6.5.0",
+    "jest": "^29.4.3"
+  }
+}
